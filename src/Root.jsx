@@ -5,6 +5,7 @@ import PA2InicioSesion from "./routes/PA2-InicioSesion"
 import PA3Registro from "./routes/PA3-Registro"
 import PA4Laboratorios from "./routes/PA4-Laboratorios"
 import PA5Grupos from "./routes/PA5-Grupos"
+import PA6JuegoMemo from "./routes/PA6-JuegoMemo"
 
 const router = createBrowserRouter([
    {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
    {
       path: "/Groups",
       element: <PA5Grupos/>
+   },
+   {
+      path: "/GamesMemo",
+      element: <PA6JuegoMemo/>
    },
  ]);
 

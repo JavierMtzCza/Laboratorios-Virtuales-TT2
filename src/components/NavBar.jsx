@@ -12,6 +12,15 @@ const NavBar = (props) => {
                <Menu.Item name='Ayuda' >
                   <Link to={"/Login"}>Login</Link>
                </Menu.Item>
+
+               <Menu.Item name='JuegoMemo'>
+                  <Link to={"/GamesMemo"}>
+                     <Button size='medium' color='blue'>
+                        Memorama
+                     </Button>
+                  </Link>
+               </Menu.Item>
+
                <Menu.Item name='Documentacion'>
                   Documentacion
                </Menu.Item>
