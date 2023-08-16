@@ -1,6 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import './cards.css'
+//import '../routes/memorama.css'
+//import './cards.css'
+
 import PA6JuegoMemo from "../routes/PA6-JuegoMemo"
 
 
