@@ -21,6 +21,14 @@ const NavBar = (props) => {
                   </Link>
                </Menu.Item>
 
+               <Menu.Item name='Grafcar'>
+                  <Link to={"/Graficar"}>
+                     <Button size='medium' color='green'>
+                        Graficar
+                     </Button>
+                  </Link>
+               </Menu.Item>
+
                <Menu.Item name='Documentacion'>
                   Documentacion
                </Menu.Item>

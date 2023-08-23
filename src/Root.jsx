@@ -6,6 +6,7 @@ import PA3Registro from "./routes/PA3-Registro"
 import PA4Laboratorios from "./routes/PA4-Laboratorios"
 import PA5Grupos from "./routes/PA5-Grupos"
 import PA6JuegoMemo from "./routes/PA6-JuegoMemo"
+import PA7Graficar from "./routes/PA7-Graficar";
 
 const router = createBrowserRouter([
    {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       path: "/GamesMemo",
       element: <PA6JuegoMemo/>
    },
+   {
+      path: "/Graficar",
+      element: <PA7Graficar/>
+   }
  ]);
 
  export default router
