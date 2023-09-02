@@ -3,42 +3,41 @@ import imagen from "../images/undraw_login_re_4vu2 1.svg"
 import { Link } from 'react-router-dom'
 
 const PA3Registro = () => {
+
   return (
     <>
-      <Grid columns={2} style={{ height: "103vh" }}>
+      <Grid columns={2} style={{ height: "104vh" }}>
         <Grid.Row>
           <Grid.Column style={{ background: "#E0DCDC" }} stretched>
             <Image src={imagen}></Image>
           </Grid.Column>
           <Grid.Column>
             <Grid.Row>
-              <Header as='h1' style={{ margin: "5% 0 0 5%" }}> Bienvenido a</Header>
-              <Header as='h1' style={{ margin: "0 0 15% 10%" }}> Math Learn Lab</Header>
+              <Header as='h1' style={{ margin: "5% 0 0 5%" }}> Bienvenido a Math Learn Lab</Header>
+              <Header as='h1' style={{ margin: "0 0 10% 10%" }}> Registro</Header>
             </Grid.Row>
             <Grid.Row>
-              <Form style={{ margin: "0 10% 5% 10%" }}>
+              <Form style={{ margin: "0 5% 5% 5%" }}>
                 <Form.Group widths='equal'>
-                  <Form.Field
-                    control={Input}
-                    label='Nombre'
-                  />
-                  <Form.Field
-                    control={Input}
-                    label='Apellido Materno'
-                  />
-                  <Form.Field
-                    control={Input}
-                    label='Apellido Paterno'
-                  />
+                  <Form.Field control={Input} label='Nombre' />
+                  <Form.Field control={Input} label='Apellido Materno' />
+                  <Form.Field control={Input} label='Apellido Paterno' />
                 </Form.Group>
-                <Form.Input iconPosition='left' fluid label="Correo" placeholder="Ingrese su correo" type='email'>
-                  <Icon name='at' />
-                  <input />
-                </Form.Input>
-                <Form.Input iconPosition='left' fluid label="Password" placeholder="Ingrese su contrasena" type='password'>
-                  <Icon name='key' />
-                  <input />
-                </Form.Input>
+                <Form.Field control={Input} type='email' placeholder='Ingrese su correo'
+                  label="Correo"
+                  iconPosition='left' icon={<Icon name='mail' inverted circular />}
+                  fluid
+                />
+                <Form.Field control={Input} type='password' placeholder='Ingrese su contrasena'
+                  label="Contrasena"
+                  iconPosition='left' icon={<Icon name='key' inverted circular />}
+                  fluid
+                />
+                <Form.Field control={Input} type='paspassword' placeholder='Verifique su contrasena'
+                  iconPosition='left' icon={<Icon name='key' inverted circular />}
+                  fluid
+                  //error={error1}
+                />
                 <Button fluid animated>
                   <Button.Content visible>Registrarme</Button.Content>
                   <Button.Content hidden>
@@ -48,13 +47,13 @@ const PA3Registro = () => {
               </Form>
             </Grid.Row>
             <Grid.Row>
-              <Segment style={{ margin: "0 20% 0 20%" }} basic textAlign='center'>
+              <Segment style={{ margin: "0 10% 0 10%" }} basic textAlign='center'>
                 <Link to="/SingIn">
-                  <Header as='h4'>Ya tienes una cuenta?</Header>
+                  <Header as='h4' content="Ya tienes una cuenta?" />
                 </Link>
                 <Divider horizontal> o </Divider>
                 <Link to="/">
-                  <Header as='h4'>Regresar a Inicio</Header>
+                  <Header as='h4' content="Regresar a Inicio" />
                 </Link>
               </Segment>
             </Grid.Row>
