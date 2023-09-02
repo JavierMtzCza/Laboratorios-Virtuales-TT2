@@ -7,6 +7,7 @@ import PA4Laboratorios from "./routes/PA4-Laboratorios"
 import PA5Grupos from "./routes/PA5-Grupos"
 import PA6JuegoMemo from "./routes/PA6-JuegoMemo"
 import PA7Graficar from "./routes/PA7-Graficar";
+import PA8Pruebas from "./routes/PA8-Pruebas";
 
 const router = createBrowserRouter([
    {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
    },
    {
       path: "/Graficar",
-      element: <PA7Graficar/>
+      element: <PA8Pruebas/>
    }
  ]);
 
