@@ -1,8 +1,37 @@
-import { Button, Divider, Form, Grid, Header, Icon, Image, Segment } from 'semantic-ui-react'
+import { Button, Divider, Form, Grid, Header, Icon, Image, Message, Segment } from 'semantic-ui-react'
+import { useForm } from "react-hook-form";
 import imagen from "../images/undraw_login_re_4vu2 1.svg"
 import { Link } from 'react-router-dom'
+import { useState } from 'react';
+
 
 const PA2InicioSesion = () => {
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm()
+  const [noUser, setNoUser] = useState(false)
+
+  const onSubmit = handleSubmit((formData) => {
+
+    fetch(`api/usuario/login/${formData.correo}/${formData.contrasena}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          setNoUser(true)
+        }
+        else {
+          setNoUser(false)
+        }
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        reset({
+          correo: '',
+          contrasena: ''
+        })
+      })
+
+  })
+
   return (
     <>
       <Grid columns={2} style={{ height: "103vh" }}>
@@ -16,22 +45,31 @@ const PA2InicioSesion = () => {
               <Header as='h1' style={{ margin: "0 0 15% 10%" }}> Math Learn Lab</Header>
             </Grid.Row>
             <Grid.Row>
-              <Form style={{ margin: "0 15% 5% 15%" }}>
-                <Form.Input iconPosition='left' fluid label="Correo" placeholder="Ingrese su correo" type='email'>
+
+              <Form error style={{ margin: "0 10% 5% 10%" }} onSubmit={onSubmit}>
+
+                <Form.Input required iconPosition='left' fluid label="Correo" placeholder="Ingrese su correo" type='email'>
                   <Icon name='at' />
-                  <input/>
+                  <input {...register("correo", {
+                    pattern: { value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, message: "Correo no valido" }
+                  })} />
                 </Form.Input>
-                <Form.Input iconPosition='left' fluid label="Password" placeholder="Ingrese su contrasena" type='password'>
+                {errors.correo && <Message size='tiny' error content={errors.correo.message} />}
+
+                <Form.Input required iconPosition='left' fluid label="Password" placeholder="Ingrese su contrasena" type='password'>
                   <Icon name='key' />
-                  <input />
+                  <input {...register("contrasena")} />
                 </Form.Input>
-                <Button fluid animated>
+                {noUser && <Message size='tiny' error content="Usuario o contrasena incorrectos" />}
+
+                <Button type='submit' fluid animated>
                   <Button.Content visible>Iniciar Sesion</Button.Content>
                   <Button.Content hidden>
                     <Icon name='arrow right' />
                   </Button.Content>
                 </Button>
               </Form>
+
             </Grid.Row>
             <Grid.Row>
               <Segment style={{ margin: "0 20% 0 20%" }} basic textAlign='center'>

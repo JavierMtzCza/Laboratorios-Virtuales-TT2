@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const PA3Registro = () => {
 
-  const { register, handleSubmit, formState: { errors },reset } = useForm()
+  const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const [open, setOpen] = useState(false)
 
   const postData = async (data) => {
@@ -24,7 +24,6 @@ const PA3Registro = () => {
     catch (error) {
       console.log(error)
     }
-
   }
 
   const onSubmit = handleSubmit((data) => {

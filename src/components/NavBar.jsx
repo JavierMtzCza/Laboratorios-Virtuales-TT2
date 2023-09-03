@@ -10,7 +10,7 @@ const NavBar = (props) => {
             </Menu.Item>
             <Menu.Menu position='right'>
                <Menu.Item name='Ayuda' >
-                  <Link to={"/Login"}>Login</Link>
+                  <Link to={"/"}>Ayuda</Link>
                </Menu.Item>
 
                <Menu.Item name='JuegoMemo'>
@@ -32,13 +32,15 @@ const NavBar = (props) => {
                <Menu.Item name='Documentacion'>
                   Documentacion
                </Menu.Item>
-               <Menu.Item name='Registramrme' >
+
+               <Menu.Item name='Registrarme' >
                   <Link to={"/SingUp"}>
                      <Button size='medium' basic color='black'>
                         Registrarse
                      </Button>
                   </Link>
                </Menu.Item>
+
                <Menu.Item name='Logearme'>
                   <Link to={"/SingIn"}>
                      <Button animated size='medium' color='black'>
@@ -48,7 +50,8 @@ const NavBar = (props) => {
                         </Button.Content>
                      </Button>
                   </Link>
-               </Menu.Item>
+               </Menu.Item
+               >
             </Menu.Menu>
          </Menu >
       </>

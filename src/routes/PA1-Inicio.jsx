@@ -4,12 +4,11 @@ import NavBar from '../components/NavBar.jsx'
 
 import imagen1 from "../images/matematicas.png"
 import imagen2 from "../images/Group 1 (2).svg"
-import Footer from '../components/Footer.jsx'
 
 const PA1Inicio = () => {
    return (
       <>
-         <Grid >
+         <Grid style={{ height: "105vh" }}>
             <Grid.Row only='computer'>
                <Grid.Column>
                   <NavBar image={imagen1} />
@@ -20,7 +19,7 @@ const PA1Inicio = () => {
                   <NavBarMobile image={imagen1} />
                </Grid.Column>
             </Grid.Row>
-            <GridRow textAlign='center' stretched>
+            <GridRow  textAlign='center'>
                <GridColumn verticalAlign='middle' width={6}>
                   <Header as='h2' icon>
                      <Icon name='settings' />
@@ -30,15 +29,10 @@ const PA1Inicio = () => {
                      </Header.Subheader>
                   </Header>
                </GridColumn>
-               <Grid.Column width={10} verticalAlign='middle'>
-                  <Image src={imagen2} fluid />
+               <Grid.Column width={10}>
+                  <Image src={imagen2} fluid/>
                </Grid.Column>
             </GridRow>
-            <Grid.Row>
-               <Grid.Column>
-                  <Footer />
-               </Grid.Column>
-            </Grid.Row>
          </Grid>
       </>
    )
